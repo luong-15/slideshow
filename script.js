@@ -7,13 +7,14 @@ var nextBtn = document.querySelector('.next')
 var currentIndex = 0;
 
 function updateImageByIndex(index) {
-  document.querySelectorAll('.list-image div').forEach(item => {
-    item.classList.remove('active')
-  })
+  document.querySelectorAll(".list-image div").forEach((item) => {
+    item.classList.remove("active");
+  });
 
-  currentIndex = index
-  imgFeature.src = listImg(index).getAttribute('src')
-  listImg(index).parentElement.classList.add('active')
+  currentIndex = index;
+  // listImg là một biến chứ không phải hàm nên phải dùng []
+  imgFeature.src = listImg[index].getAttribute("src");
+  listImg[index].parentElement.classList.add("active");
 }
 
 listImg.forEach((imgElement, index) => {
